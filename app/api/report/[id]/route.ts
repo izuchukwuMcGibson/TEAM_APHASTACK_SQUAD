@@ -4,14 +4,14 @@ import { verifyTransaction } from "@/lib/squad";
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ id: string }> },
 ) {
   try {
     const { id } = await params;
     const { data, error } = await supabase
       .from("verifications")
       .select(
-        "id, preliminary_result, full_report, unlocked, squad_transaction_ref"
+        "id, preliminary_result, full_report, unlocked, squad_transaction_ref",
       )
       .eq("id", id)
       .single();

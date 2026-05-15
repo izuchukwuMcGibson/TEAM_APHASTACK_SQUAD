@@ -50,14 +50,14 @@ export async function verifyTransaction(transaction_ref: string) {
       headers: {
         Authorization: `Bearer ${SQUAD_SECRET}`,
       },
-    }
+    },
   );
   return response.json();
 }
 
 export function validateWebhookSignature(
   payload: string,
-  signature: string
+  signature: string,
 ): boolean {
   const crypto = require("crypto");
   const hash = crypto

@@ -5,7 +5,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 export async function analyzeDocument(
   documentBase64: string,
   mediaType: string,
-  documentType: string
+  documentType: string,
 ) {
   const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
