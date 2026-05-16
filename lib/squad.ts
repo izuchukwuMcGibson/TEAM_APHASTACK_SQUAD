@@ -24,7 +24,7 @@ export async function initiatePayment({
       currency: "NGN",
       initiate_type: "inline",
       transaction_ref,
-      callback_url: `${process.env.NEXT_PUBLIC_APP_URL}/results/${verificationId}?payment=complete`,
+      callback_url: `${process.env.NEXT_PUBLIC_APP_URL}/payment-callback`,
       pass_charge: false,
       customer_name: "VeriDoc User",
     }),
